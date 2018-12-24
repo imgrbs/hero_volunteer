@@ -35,16 +35,18 @@ export default class SelectFavorite extends React.Component {
         })
     }
 
-    handleSubmit = () => {
-
+    handleSubmit = (e) => {
+        e.preventDefault()
+        window.location.href = '/skill'
     }
 
     render() {
+        const props = this.state.selectedImg.length >= 3 ? {} : { disabled: true }
         return (
             <React.Fragment>
                 <Container>
                     <Row className='px-2' style={{ margintTop: '10px' }}>
-                        <Col xs={12} lg={4}>
+                        <Col xs={12} lg={12}>
                             <h5 className='px-3 my-2'>เลือกความชอบ</h5></Col>
                     </Row>
                     <Row className='py-1 px-3'>
@@ -56,7 +58,7 @@ export default class SelectFavorite extends React.Component {
                     </Row>
                     <Row className='py-1 mx-2 w-100'>
                         <Col xs={12} className='text-right'>
-                            <ButtonPrimary className='btn mr-auto' onClick={this.handleSubmit}>Next</ButtonPrimary></Col>
+                            <ButtonPrimary className='btn mr-auto' onClick={this.handleSubmit} {...props}>Next</ButtonPrimary></Col>
                     </Row>
                 </Container>
             </React.Fragment>

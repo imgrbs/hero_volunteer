@@ -8,8 +8,8 @@ import { getAll } from "../../config/firebase"
 
 import Container, { Col } from "../base/layout"
 import Header from "../base/text"
-import { SubHeader, Content } from "../base/text"
-import { ButtonPrimaryOutlined } from "../base/button";
+import { SubHeader, Content, Hero } from "../base/text"
+import { ButtonPrimaryOutlined, ButtonPrimary } from "../base/button";
 
 
 export default class LandingIndex extends Component {
@@ -123,9 +123,14 @@ export default class LandingIndex extends Component {
           </Row>
 
 
-
         </Container>
-      </React.Fragment>
+        <div className='w-100 text-center py-5' style={{ marginBottom: '20px', backgroundImage: "url(\'/static/image/banner_create_event_soon.png\')" }}>
+          <Hero className='py-5' style={{ color: '#FFFFFF' }}>
+            ต้องการ "สร้าง" งานจิตอาสาให้แก่ผู้อื่น
+            </Hero>
+          <ButtonPrimaryOutlined className='py-6' style={{ fontSize: '28px', lineHeight: '50px', width: '300px' }}>สร้างงานจิตอาสา</ButtonPrimaryOutlined>
+        </div>
+      </React.Fragment >
     )
   }
 }
