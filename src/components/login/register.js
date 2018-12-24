@@ -25,15 +25,15 @@ class Register extends React.Component {
     }
 
     handleSubmit = (e) => {
+        e.preventDefault()
         const { user } = this.props
         const profile = {
-            ...user,
             profile: {
                 ...this.state
             }
         }
         update('/users', user.uid, profile)
-        e.preventDefault()
+        this.props.history.push('/favorite')
     }
 
     render() {

@@ -103,9 +103,7 @@ export default class Navbar extends Component {
                           </span>
                         </div>
                         <div className="dropdown-content">
-                          <a href='/profile'>Profile</a>
-                        </div>
-                        <div className="dropdown-content">
+                          <a href='/manage'>Create Event</a>
                           <a href='#'onClick={logout}>Logout</a>
                         </div>
                       </DropdownBox>

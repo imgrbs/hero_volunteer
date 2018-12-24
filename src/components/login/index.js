@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { isNull } from "util"
-import Cookies from "js-cookie"
 
 import firebase, { insert, getOne } from '../../config/firebase'
 
@@ -24,24 +23,25 @@ export default class LoginIndex extends Component {
       const profile = info.profile;
       getOne(`/users`, uid).once("value").then(snap => {
         const user = snap.val()
-        if (isNull(user)) {
-          insert(`/users/${uid}`, {
-            providerId: info.providerId,
-            ...profile
-          })
-          if (user && user.profile) {
-            const redirect = Cookies.get('redirect')
-            if (redirect) {
-              window.location.href = `/${redirect}`
-            } else {
-              window.location.href = '/'
-            }
-          } else {
-            window.location.href = '/register'
-          }
+        const userWithProfile =  {
+          providerId: info.providerId,
+          profile: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            gender: ''
+          },
+          ...profile,
+          ...user,
         }
-        this.setState({ user })
-        window.location.href = '/'
+        insert(`/users/${uid}`, userWithProfile)
+        this.setState({ user: userWithProfile })
+        if (user && user.profile && user.profile.firstName !== '') {
+          window.location.href = '/'
+        } else {
+          window.location.href = '/register'
+        }
       })
     })
   }
@@ -50,7 +50,7 @@ export default class LoginIndex extends Component {
     return (
       <UserContext.Provider user={this.state.user}>
           <Container>
-            <Col className='text-center'>
+            <Col className='text-center mt-5'>
                 <Header>
                   เข้าสู่ระบบ
                 </Header>

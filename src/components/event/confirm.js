@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Radio, Form, Modal } from 'antd'
-import Cookies from 'js-cookie'
 
 import firebase, { getOne, update, insert } from '../../config/firebase';
 import Container, { ContainerFluid, Col } from '../base/layout';
@@ -49,6 +48,10 @@ class ConfirmRegister extends Component {
         const { user } = this.props
         const { uid } = this.props.match.params
         this.getEventByUid(uid)
+        if (user && user.profile) {
+            const { firstName, lastName, gender, email, phone } = user.profile
+            this.setState({ firstName, lastName, gender, email, phone })
+        }
     }
     
     getEventByUid = uid => {
@@ -95,7 +98,6 @@ class ConfirmRegister extends Component {
             }
             this.props.history.push(`/event/success`)
         } else {
-            Cookies.set('redirect', this.props.history.pathname)
             this.props.history.push(`/login`)
         }
     }
