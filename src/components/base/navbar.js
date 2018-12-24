@@ -2,10 +2,14 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 
+import firebase from '../../config/firebase';
+import colors from '../../config/colors';
+
 import { UserContext } from "../../context";
 
 const Nav = styled.nav`
-  background-color: #cc181e;
+  background-color: ${colors.white};
+  box-shadow: 0px 3px 4px rgba(0,0,0,0.1);
 `
 
 const ProfileImage = styled.img`
@@ -39,18 +43,25 @@ const DropdownBox = styled.div`
 
 export default class Navbar extends Component {
   state = {
+    isOpen: false
   }
 
+  toggle = () =>  {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   render() {
+    const { isOpen } = this.state
     const { logout } = this.props
     return (
       <UserContext.Consumer>
         {({user}) => (
-          <Nav className="navbar navbar-expand-md navbar-dark fixed-top">
+          <Nav className="navbar navbar-expand-md navbar-light fixed-top">
             <a className="navbar-brand" href="/">
-              Volunteer
+              <img src="/static/image/logo.png" alt=""/>
             </a>
-            <button
+            <button onClick={this.toggle}
               className="navbar-toggler"
               type="button"
               data-toggle="collapse"
@@ -63,22 +74,22 @@ export default class Navbar extends Component {
             </button>
 
             <div
-              className="collapse navbar-collapse"
+              className={`${!isOpen && 'collapse'} navbar-collapse`}
               id="navbar"
             >
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                  <Link className="nav-link" to="/">
+                  <Link onClick={this.toggle} className="nav-link" to="/">
                     Home
                   </Link>
                 </li>
               </ul>
               <div className="ml-auto text-white">
                 {
-                    user ? (
+                    !user ? (
                       <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                          <Link className="nav-link active" to={'/login'}>
+                          <Link onClick={this.toggle} className="nav-link active" to={'/login'}>
                           Login
                           </Link>
                         </li>
@@ -87,9 +98,12 @@ export default class Navbar extends Component {
                       <DropdownBox>
                         <div className="dropbtn">
                           <ProfileImage className='img-fluid rounded-circle' src={user.photoURL} alt="profile"/>
-                          <span className='mx-3'>
+                          <span className='mx-3 text-dark'>
                               { user.displayName }
                           </span>
+                        </div>
+                        <div className="dropdown-content">
+                          <a href='/profile'>Profile</a>
                         </div>
                         <div className="dropdown-content">
                           <a href='#'onClick={logout}>Logout</a>

@@ -8,6 +8,7 @@ import Header, { SubHeader, Highlight, Content } from '../base/text'
 import Container, { ContainerFluid, Col } from '../base/layout'
 import  { FixedButton } from '../base/button'
 import Loading from '../base/loading';
+import HorizontalLine from '../base/HorizontalLine';
 
 class EventDetail extends Component {
   state = {
@@ -65,7 +66,7 @@ class EventDetail extends Component {
 
               <SubHeader>จำนวนผู้เข้าร่วม</SubHeader>
               {/* <Content>{event.staffs}</Content> */}
-
+              <HorizontalLine />
               <Highlight>ผู้จัดงาน</Highlight>
               <Highlight>{event.organizer}</Highlight>
             </Col>

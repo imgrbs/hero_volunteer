@@ -1,0 +1,254 @@
+[
+    {
+        "eventName": "ปลุกป่ามหาสนุก EP.1 สวนผึ้ง จ.ราชบุรี",
+        "description": "เนื่องจากสภาพป่าที่อำเภอสวนผึ้ง ได้รับผลกระทบการการเติบโตของนักท่องเที่ยวขึ้นทุกปี ทำให้ป่าถูกบุกรุกจำนวนมาก จึงทำให้เกิดกิจกรรมนี้ขึ้นมาเพื่อปลูกป่า สร้างความอุดมสมบูรณ์กลับสู่อำเภอสวนผึ้ง",
+        "date": "26 ม.ค. 2562",
+        "coverImage": "static/image/event-thumbnail-s1ep1",
+        "startTime": 9,
+        "endTime": 19,
+        "location": "อำเภอสวนผึ้ง จังหวัดราชบุรี",
+        "maxStaff": 50,
+        "organizer": "นายอดิศักดิ์ งามสิริ",
+        "requirement": "- ช่วยกันปลูกป่า ลดโลกร้อน\\n - ช่วยกันสร้างทุ่งหญ้า\\n - เรียนรู้เรื่องการอนุรักษ์สัตว์ป่า\\n - ร่วมลดโลกร้อนโดยการทำฝายชะลอน้ำร่วมกัน",
+        "service": "มีรถรับส่ง, อาหารกลางวัน, อุปกรณ์สำหรับกิจกรรมทั้งหมด",
+        "telNo": "086-770-5533",
+        "isApproved": "TRUE",
+        "staffs": [
+            {
+                "uid": "5gXa0eqDf6fVmXBcp18wojJ5ekA2"
+            },
+            {
+                "uid": "kvYSYnTiWBUJRhLetWb1tJf89VA2"
+            }
+        ],
+        "coreTeam": "5gXa0eqDf6fVmXBcp18wojJ5ekA2, kvYSYnTiWBUJRhLetWb1tJf89VA2",
+        "types": [
+            "ปลูกป่า"
+        ],
+        "coreTeamTypes": [         {             "max": 5,             "name": "สวัสดิการ"         },         {             "max": 20,             "name": "จัดการต้นกล้า"         }     ]
+    },
+    {
+        "eventName": "ปลุกป่ามหาสนุก EP.2 ปากท่อ จ.ราชบุรี",
+        "description": "เนื่องจากสภาพป่าที่อำเภอปากท่อ ได้รับผลกระทบการการเติบโตของนักท่องเที่ยวขึ้นทุกปี ทำให้ป่าถูกบุกรุกจำนวนมาก จึงทำให้เกิดกิจกรรมนี้ขึ้นมาเพื่อปลูกป่า สร้างความอุดมสมบูรณ์กลับสู่อำเภอปากท่อ",
+        "date": "2 ก.พ.. 2562",
+        "coverImage": "static/image/event-thumbnail-s1ep2",
+        "startTime": 9,
+        "endTime": 19,
+        "location": "อำเภอปากท่อง จังหวัดราชบุรี",
+        "maxStaff": 50,
+        "organizer": "นายกอร์ปพงษ์ ศิริสกุล",
+        "requirement": "- ช่วยกันปลูกป่า ลดโลกร้อน\\n - ช่วยกันสร้างทุ่งหญ้า\\n - เรียนรู้เรื่องการอนุรักษ์สัตว์ป่า\\n - ร่วมลดโลกร้อนโดยการทำฝายชะลอน้ำร่วมกัน",
+        "service": "มีรถรับส่ง, อาหารกลางวัน, อุปกรณ์สำหรับกิจกรรมทั้งหมด",
+        "telNo": "086-770-5534",
+        "isApproved": "TRUE",
+        "staffs": [
+            {
+                "uid": "5gXa0eqDf6fVmXBcp18wojJ5ekA2"
+            },
+            {
+                "uid": "kvYSYnTiWBUJRhLetWb1tJf89VA2"
+            }
+        ],
+        "coreTeam": "5gXa0eqDf6fVmXBcp18wojJ5ekA2, kvYSYnTiWBUJRhLetWb1tJf89VA3",
+        "types": [
+            "ปลูกป่า"
+        ],
+        "coreTeamTypes": [         {             "max": 5,             "name": "สวัสดิการ"         },         {             "max": 20,             "name": "จัดการต้นกล้า"         }     ]
+    },
+    {
+        "eventName": "ปลุกป่ามหาสนุก EP.3 โคกเจริญ จ.ลพบุรี",
+        "description": "อำเภอโคกเจริญถูกผลกระทบจากการบุกรุกของผู้มีอิทธิพลในพื้นที่ ทำให้สัดส่วนของป่าไม้มีขนาดเล็กลงเป็นอย่างมาก จึงเกิดโครงการนี้เพื่อเพิ่มจำนวนต้นไม้ในอำเภอ",
+        "date": "9 ก.พ. 2562",
+        "coverImage": "static/image/event-thumbnail-s1ep3",
+        "startTime": 9,
+        "endTime": 19,
+        "location": "อำเภอโคกเจริญ จังหวัดลพบุรี",
+        "maxStaff": 50,
+        "organizer": "นายกอร์ปพงษ์ ศิริสกุล",
+        "requirement": "- ช่วยกันปลูกป่า ลดโลกร้อน\\n - ช่วยกันสร้างทุ่งหญ้า\\n - เรียนรู้เรื่องการอนุรักษ์สัตว์ป่า\\n - ร่วมลดโลกร้อนโดยการทำฝายชะลอน้ำร่วมกัน",
+        "service": "มีรถรับส่ง, อาหารกลางวัน, อุปกรณ์สำหรับกิจกรรมทั้งหมด",
+        "telNo": "086-770-5535",
+        "isApproved": "TRUE",
+        "staffs": [
+            {
+                "uid": "5gXa0eqDf6fVmXBcp18wojJ5ekA2"
+            },
+            {
+                "uid": "kvYSYnTiWBUJRhLetWb1tJf89VA2"
+            }
+        ],
+        "coreTeam": "5gXa0eqDf6fVmXBcp18wojJ5ekA2, kvYSYnTiWBUJRhLetWb1tJf89VA4",
+        "types": [
+            "ปลูกป่า"
+        ],
+        "coreTeamTypes": [         {             "max": 5,             "name": "สวัสดิการ"         },         {             "max": 20,             "name": "จัดการต้นกล้า"         }     ]
+    },
+    {
+        "eventName": "ปลุกป่ามหาสนุก EP.4 บางเสาธง จ.สมุทรปราการ",
+        "description": "อำเภอบางเสาธงถูกผลกระทบจากการบุกรุกของผู้มีอิทธิพลในพื้นที่ ทำให้สัดส่วนของป่าไม้มีขนาดเล็กลงเป็นอย่างมาก จึงเกิดโครงการนี้เพื่อเพิ่มจำนวนต้นไม้ในอำเภอ",
+        "date": "16 ก.พ. 2562",
+        "coverImage": "static/image/event-thumbnail-s1ep4",
+        "startTime": 9,
+        "endTime": 19,
+        "location": "อำเภอบางเสาธง จังหวัดสมุทรปราการ",
+        "maxStaff": 50,
+        "organizer": "นายอดิศักดิ์ งามสิริ",
+        "requirement": "- ช่วยกันปลูกป่า ลดโลกร้อน\\n - ช่วยกันสร้างทุ่งหญ้า\\n - เรียนรู้เรื่องการอนุรักษ์สัตว์ป่า\\n - ร่วมลดโลกร้อนโดยการทำฝายชะลอน้ำร่วมกัน",
+        "service": "มีรถรับส่ง, อาหารกลางวัน, อุปกรณ์สำหรับกิจกรรมทั้งหมด",
+        "telNo": "086-770-5536",
+        "isApproved": "TRUE",
+        "staffs": [
+            {
+                "uid": "5gXa0eqDf6fVmXBcp18wojJ5ekA2"
+            },
+            {
+                "uid": "kvYSYnTiWBUJRhLetWb1tJf89VA2"
+            }
+        ],
+        "coreTeam": "5gXa0eqDf6fVmXBcp18wojJ5ekA2, kvYSYnTiWBUJRhLetWb1tJf89VA5",
+        "types": [
+            "ปลูกป่า"
+        ],
+        "coreTeamTypes": [         {             "max": 5,             "name": "สวัสดิการ"         },         {             "max": 20,             "name": "จัดการต้นกล้า"         }     ]
+    },
+    {
+        "eventName": "นัดกันโดนซ่อม EP.1 โรงเรียน จ.สุพรรณบุรี",
+        "description": "โรงเรียนอนุวิทยาเป็นโรงเรียนเก่าแก่ ที่ไม่ได้รับการซ่อมแซมมานานกว่า 18 ปี ทำให้นักเรียนไม่มีความปลอดภัยในการศึกษา",
+        "date": "22 ก.พ. 2562",
+        "coverImage": "static/image/event-thumbnail-s2e1",
+        "startTime": 9,
+        "endTime": 19,
+        "location": "อำเภอเดิมบางนางบวช จังหวัดสุพรรณบุรี",
+        "maxStaff": 50,
+        "organizer": "นายกอร์ปพงษ์ ศิริสกุล",
+        "requirement": "-ช่วยซ่อมแซมโรงเรียน\\n - ซ่อมสนามเด็กเล่น\\n - ฝึกพัฒนาฝีมือช่าง",
+        "service": "มีรถรับส่ง, อาหารกลางวัน, อุปกรณ์สำหรับกิจกรรมทั้งหมด",
+        "telNo": "086-770-5537",
+        "isApproved": "TRUE",
+        "staffs": [
+            {
+                "uid": "5gXa0eqDf6fVmXBcp18wojJ5ekA2"
+            },
+            {
+                "uid": "kvYSYnTiWBUJRhLetWb1tJf89VA2"
+            }
+        ],
+        "coreTeam": "5gXa0eqDf6fVmXBcp18wojJ5ekA2, kvYSYnTiWBUJRhLetWb1tJf89VA6",
+        "types": [
+            "ซ่อมโรงเรียน"
+        ],
+        "coreTeamTypes": [         {             "max": 5,             "name": "สวัสดิการ"         },         {             "max": 20,             "name": "ช่าง"         }     ]
+    },
+    {
+        "eventName": "ปลุกป่ามหาสนุก EP.5 จักราช จ.นครราชสีมา",
+        "description": "อำเภอจักราชถูกผลกระทบจากการบุกรุกของผู้มีอิทธิพลและชาวบ้านในพื้นที่ ทำให้สัดส่วนของป่าไม้มีขนาดเล็กลงเป็นอย่างมาก จึงเกิดโครงการนี้เพื่อเพิ่มจำนวนต้นไม้ในอำเภอ",
+        "date": "23 ก.พ. 2562",
+        "coverImage": "static/image/event-thumbnail-s1ep5",
+        "startTime": 9,
+        "endTime": 19,
+        "location": "อำเภอจักราช จังหวัดนครราชสีมา",
+        "maxStaff": 50,
+        "organizer": "นายกอร์ปพงษ์ ศิริสกุล",
+        "requirement": "- ช่วยกันปลูกป่า ลดโลกร้อน\\n - ช่วยกันสร้างทุ่งหญ้า\\n - เรียนรู้เรื่องการอนุรักษ์สัตว์ป่า\\n - ร่วมลดโลกร้อนโดยการทำฝายชะลอน้ำร่วมกัน",
+        "service": "มีรถรับส่ง, อาหารกลางวัน, อุปกรณ์สำหรับกิจกรรมทั้งหมด",
+        "telNo": "086-770-5538",
+        "isApproved": "TRUE",
+        "staffs": [
+            {
+                "uid": "5gXa0eqDf6fVmXBcp18wojJ5ekA2"
+            },
+            {
+                "uid": "kvYSYnTiWBUJRhLetWb1tJf89VA2"
+            }
+        ],
+        "coreTeam": "5gXa0eqDf6fVmXBcp18wojJ5ekA2, kvYSYnTiWBUJRhLetWb1tJf89VA7",
+        "types": [
+            "ซ่อมโรงเรียน"
+        ],
+        "coreTeamTypes": [         {             "max": 5,             "name": "สวัสดิการ"         },         {             "max": 20,             "name": "ช่าง"         }     ]
+    },
+    {
+        "eventName": "นัดกันโดนซ่อม EP.2 โรงเรียน จ.อุทัยธานี",
+        "description": "โรงเรียนบ้านไร่วิทยาเป็นโรงเรียนเก่าแก่ ที่ไม่ได้รับการซ่อมแซมมานานกว่า 18 ปี ทำให้นักเรียนไม่มีความปลอดภัยในการศึกษา",
+        "date": "2 มี.ค. 2562",
+        "coverImage": "static/image/event-thumbnail-s2e2",
+        "startTime": 9,
+        "endTime": 19,
+        "location": "อำเภอบ้านไร่ จังหวัดอุทัยธานี",
+        "maxStaff": 50,
+        "organizer": "นางอรอนงค์ สิงห์ปัญญา",
+        "requirement": "-ช่วยซ่อมแซมโรงเรียน\\n - ซ่อมสนามเด็กเล่น\\n - ฝึกพัฒนาฝีมือช่าง",
+        "service": "มีรถรับส่ง, อาหารกลางวัน, อุปกรณ์สำหรับกิจกรรมทั้งหมด",
+        "telNo": "086-770-5539",
+        "isApproved": "TRUE",
+        "staffs": [
+            {
+                "uid": "5gXa0eqDf6fVmXBcp18wojJ5ekA2"
+            },
+            {
+                "uid": "kvYSYnTiWBUJRhLetWb1tJf89VA2"
+            }
+        ],
+        "coreTeam": "5gXa0eqDf6fVmXBcp18wojJ5ekA2, kvYSYnTiWBUJRhLetWb1tJf89VA8",
+        "types": [
+            "ซ่อมโรงเรียน"
+        ],
+        "coreTeamTypes": [         {             "max": 5,             "name": "สวัสดิการ"         },         {             "max": 20,             "name": "ช่าง"         }     ]
+    },
+    {
+        "eventName": "นัดกันโดนซ่อม EP.3 โรงเรียน จ.นครสวรรค์",
+        "description": "โรงเรียนท่าตะโกวิทยาเป็นโรงเรียนเก่าแก่ ที่ไม่ได้รับการซ่อมแซมมานานกว่า 13 ปี ทำให้นักเรียนไม่มีความปลอดภัยในการศึกษา",
+        "date": "9 มี.ค. 2562",
+        "coverImage": "static/image/event-thumbnail-s2e3",
+        "startTime": 9,
+        "endTime": 19,
+        "location": "อำเภอท่าตะโก จังหวัดนครสวรรค์",
+        "maxStaff": 50,
+        "organizer": "นางกนก ศรีจันทร์",
+        "requirement": "-ช่วยซ่อมแซมโรงเรียน\\n - ซ่อมสนามเด็กเล่น\\n - ฝึกพัฒนาฝีมือช่าง",
+        "service": "มีรถรับส่ง, อาหารกลางวัน, อุปกรณ์สำหรับกิจกรรมทั้งหมด",
+        "telNo": "086-770-5540",
+        "isApproved": "TRUE",
+        "staffs": [
+            {
+                "uid": "5gXa0eqDf6fVmXBcp18wojJ5ekA2"
+            },
+            {
+                "uid": "kvYSYnTiWBUJRhLetWb1tJf89VA2"
+            }
+        ],
+        "coreTeam": "5gXa0eqDf6fVmXBcp18wojJ5ekA2, kvYSYnTiWBUJRhLetWb1tJf89VA9",
+        "types": [
+            "ซ่อมโรงเรียน"
+        ],
+        "coreTeamTypes": [         {             "max": 5,             "name": "สวัสดิการ"         },         {             "max": 20,             "name": "ช่าง"         }     ]
+    },
+    {
+        "eventName": "นัดกันโดนซ่อม EP.4 โรงเรียน จ.ตาก",
+        "description": "โรงเรียนสามเงาเป็นโรงเรียนที่ถูกพายุเข้าเมื่อ 2 ปีก่อน และยังไม่ได้รับการซ่อมแซมมานาน ทำให้ไม่เหมาะแก่การเรียนของนักเรียน",
+        "date": "16 มี.ค. 2562",
+        "coverImage": "static/image/event-thumbnail-s2e4",
+        "startTime": 9,
+        "endTime": 19,
+        "location": "อำเภอสามเงา จังหวัดตาก",
+        "maxStaff": 50,
+        "organizer": "นายเอก ทรงวิทย์",
+        "requirement": "-ช่วยซ่อมแซมโรงเรียน\\n - ซ่อมสนามเด็กเล่น\\n - ฝึกพัฒนาฝีมือช่าง",
+        "service": "มีรถรับส่ง, อาหารกลางวัน, อุปกรณ์สำหรับกิจกรรมทั้งหมด",
+        "telNo": "086-770-5541",
+        "isApproved": "TRUE",
+        "staffs": [
+            {
+                "uid": "5gXa0eqDf6fVmXBcp18wojJ5ekA2"
+            },
+            {
+                "uid": "kvYSYnTiWBUJRhLetWb1tJf89VA2"
+            }
+        ],
+        "coreTeam": "5gXa0eqDf6fVmXBcp18wojJ5ekA2, kvYSYnTiWBUJRhLetWb1tJf89VA10",
+        "types": [
+            "ซ่อมโรงเรียน"
+        ],
+        "coreTeamTypes": [         {             "max": 5,             "name": "สวัสดิการ"         },         {             "max": 20,             "name": "ช่าง"         }     ]
+    }
+]
