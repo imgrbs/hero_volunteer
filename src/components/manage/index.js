@@ -48,7 +48,7 @@ export default class Manage extends Component {
     return (
       <Container>
         <Col>
-            <Header className='mt-5 mb-2'>สร้างกิจกรรม</Header>
+            <Header className='mt-5 mb-2 text-center'>สร้างกิจกรรม</Header>
             <Form onSubmit={this.submit}>
                 <Header>รายละเอียดงาน</Header>
                 <hr/>
