@@ -16,6 +16,7 @@ import Navbar from "./components/base/navbar";
 import Register from "./components/login/register";
 import SelectFavorite from "./components/login/selectFavorite";
 import SelectSkill from "./components/login/selectSkill";
+import ManageEvent from "./components/manage";
 
 class App extends Component {
   state = {
@@ -47,9 +48,10 @@ class App extends Component {
         <Switch>
           {!user && <Route exact path="/login" component={Login} />}
           <Route path="/register" component={Register} />
-          <Route path='/selectFav' component={SelectFavorite} />
-          <Route path='/selectSkill' component={SelectSkill} />
+          <Route path='/favorite' component={SelectFavorite} />
+          <Route path='/skill' component={SelectSkill} />
           <Route exact path="/" component={Landing} />
+          <Route exact path="/manage" component={ManageEvent} />
           <Route exact path="/event/success" component={JoinSuccess} />
           <Route exact path="/event/:uid" component={EventDetail} />
           <Route exact path="/event/:uid/confirm" component={ConfirmRegister} />

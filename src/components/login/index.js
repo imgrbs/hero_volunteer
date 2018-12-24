@@ -27,7 +27,14 @@ export default class LoginIndex extends Component {
         if (isNull(user)) {
           insert(`/users/${uid}`, {
             providerId: info.providerId,
-            ...profile
+            ...profile,
+            profile: {
+              firstName: '',
+              lastName: '',
+              email: '',
+              phone: '',
+              gender: ''
+            }
           })
           if (user && user.profile) {
             const redirect = Cookies.get('redirect')
@@ -39,9 +46,10 @@ export default class LoginIndex extends Component {
           } else {
             window.location.href = '/register'
           }
+        } else {
+          window.location.href = '/'
         }
         this.setState({ user })
-        window.location.href = '/'
       })
     })
   }
