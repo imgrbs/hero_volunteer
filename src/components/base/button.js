@@ -18,6 +18,15 @@ export const ButtonPrimary = styled(DefaultButton)`
     border: none;
 `
 
+export const ButtonPrimaryOutlined = styled(DefaultButton)`
+    background-color: ${colors.white};
+    color: ${colors.primary};
+    border: 1px solid ${colors.primary} !important;
+    height: auto;
+    border-radius: 15px;
+    border: none;
+`
+
 export const FixedButton = styled(ButtonPrimary)`
     font-size: ${fonts.header};
     color: ${colors.white};
