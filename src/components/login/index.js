@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { isNull } from "util"
 
 import firebase, { insert, getOne } from '../../config/firebase'
 
@@ -8,13 +9,6 @@ import Container, { Col } from "../base/layout";
 import { FacebookButton } from "../base/button";
 import Header from "../base/text";
 import Icon from "../base/icon";
-
-function isNull(data) {
-  if (data) {
-    return false;
-  }
-  return true;
-}
 
 export default class LoginIndex extends Component {
   state = {
@@ -27,10 +21,10 @@ export default class LoginIndex extends Component {
       const uid = userAuth.user.uid
       const info = userAuth.additionalUserInfo
       const profile = info.profile;
-      getOne(`/user`, uid).once("value").then(snap => {
+      getOne(`/users`, uid).once("value").then(snap => {
         const user = snap.val()
         if (isNull(user)) {
-          insert(`/user/${uid}`, {
+          insert(`/users/${uid}`, {
             providerId: info.providerId,
             ...profile
           })

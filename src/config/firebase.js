@@ -21,6 +21,8 @@ export const getAll = (collection) => db.ref(`${collection}`)
 
 export const getOne = (collection, attr) => db.ref(`${collection}/${attr}`)
 
+export const update = (collection, attr, value) => db.ref(`${collection}/${attr}`).update({ ...value })
+
 export const insert = (collection, value) => db.ref(`${collection}`).set({ ...value })
 
 export const auth = firebase.auth

@@ -1,22 +1,57 @@
 import React, { Component } from 'react'
 
+import { getOne } from '../../config/firebase';
+
+import { UserContext } from '../../context'
+
 import Header, { SubHeader, Highlight, Content } from '../base/text'
 import Container, { ContainerFluid, Col } from '../base/layout'
 import  { FixedButton } from '../base/button'
+import Loading from '../base/loading';
 
-export default class EventDetail extends Component {
+class EventDetail extends Component {
+  state = {
+    event: {},
+    loading: true,
+  }
+
+  getEventByUid = uid => {
+    getOne('/events', uid).once("value").then((snapshot) => {
+      const event = snapshot.val()
+      this.setState({ event })
+      this.setState({ loading: false })
+    })
+
+    return this.state.event
+  }
+  
+  componentDidMount() {
+    const { uid } = this.props.match.params
+    if (uid) {
+      this.getEventByUid(uid)
+    } else {
+      window.location.href = '/error'
+    }
+  }
+
+  handleJoin = () => {
+    const { uid } = this.props.match.params
+    this.props.history.push(`/event/${uid}/confirm`)
+  }
+
   render() {
-    const { event } = this.props
+    const { event, loading } = this.state
     return (
       <React.Fragment>
+        <Loading isShow={loading} />
         <ContainerFluid>
           <Container>
             <Col>
-              <img className='my-2' src="/static/image/staff.png" alt=""/>
+              <img className='my-2 w-100' src="/static/image/staff.png" alt=""/>
             </Col>
             <Col>
               <Header>{event.eventName}</Header>
-              <Highlight>วันที่: <b>{event.date} | เวลา: {event.startTime} - {event.endTime} น.</b></Highlight>
+              <Highlight>วันที่: <b>{event.date || 'ยังไม่กำหนดวัน'} | เวลา: {event.startTime || 'ยังไม่กำหนดเวลาเริ่ม'} - {event.endTime|| 'ยังไม่กำหนดเวลาจบ'} น.</b></Highlight>
               <Highlight>สถานที่ {event.location}</Highlight>
 
               <SubHeader className='mt-3'>รายละเอียดงาน</SubHeader>
@@ -26,33 +61,30 @@ export default class EventDetail extends Component {
               <Content>{event.requirement}</Content>
 
               <SubHeader>ความต้องการทีมงานเฉพาะด้าน</SubHeader>
-              <Content>{event.coreTeam}</Content>
+              {/* <Content>{event.coreTeam}</Content> */}
 
               <SubHeader>จำนวนผู้เข้าร่วม</SubHeader>
-              <Content>{event.staffs}</Content>
+              {/* <Content>{event.staffs}</Content> */}
 
               <Highlight>ผู้จัดงาน</Highlight>
               <Highlight>{event.organizer}</Highlight>
             </Col>
           </Container>
         </ContainerFluid>
-        <FixedButton className='py-2'>เข้าร่วม</FixedButton>
+        <FixedButton onClick={this.handleJoin} className='py-2'>เข้าร่วม</FixedButton>
       </React.Fragment>
     )
   }
 }
 
-EventDetail.defaultProps = {
-  event: {
-    eventName: 'ไม่มีชื่อกิจกรรมนี้',
-    description: 'ไม่มีรายละเอียดกิจกรรม',
-    requirement: 'ไม่มีสิ่งที่คาดว่าจะได้รับ',
-    coreTeam: [],
-    staffs: [],
-    location: 'ไม่มีสถานที่',
-    organizer: 'ไม่มีผู้จัด',
-    date: '26 ม.ค. 2562',
-    startTime: '06:00',
-    endTime: '19:00',
-  }
-}
+const ComposeUserContext = ({...props}) => (
+    <UserContext.Consumer>
+    {
+      ({ user }) => (
+        <EventDetail user={user} {...props} />
+      )
+    }
+  </UserContext.Consumer>
+)
+
+export default ComposeUserContext
