@@ -48,7 +48,7 @@ export default class Navbar extends Component {
         {({user}) => (
           <Nav className="navbar navbar-expand-md navbar-dark fixed-top">
             <a className="navbar-brand" href="/">
-              Volunteer
+              JoyJoin
             </a>
             <button
               className="navbar-toggler"
