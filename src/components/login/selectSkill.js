@@ -40,7 +40,6 @@ export default class SelectFavorite extends React.Component {
     }
 
     render() {
-        console.log(imgList)
         return (
             <React.Fragment>
                 <Container>

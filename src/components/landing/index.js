@@ -35,7 +35,6 @@ export default class LandingIndex extends Component {
 
   render() {
     const { events, eventsLoading } = this.state
-    console.log(this.state.events)
     return (
       <React.Fragment>
         <div className='w-100' style={{ marginBottom: '20px' }}>
@@ -70,7 +69,6 @@ export default class LandingIndex extends Component {
             </Col>
             {
               this.state.events.map((event, i) => {
-                console.log(event)
                 return (
                   <Col key={i} xs={6} lg={4} className='py-3'>
                     <Card
@@ -101,7 +99,6 @@ export default class LandingIndex extends Component {
             </Col>
             {
               this.state.events.map((event, i) => {
-                console.log(event)
                 return (
                   <Col key={i} xs={6} lg={4} className='py-3'>
                     <Card
