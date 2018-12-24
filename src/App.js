@@ -7,6 +7,7 @@ import { UserContext } from './context';
 
 import Landing from "./components/landing";
 import EventDetail from "./components/event";
+import ConfirmRegister from "./components/event/confirm";
 import JoinSuccess from "./components/event/success";
 import Login from "./components/login";
 import NotFound from "./components/error/NotFound";
@@ -44,6 +45,7 @@ class App extends Component {
           <Route exact path="/" component={Landing} />
           <Route exact path="/event/success" component={JoinSuccess} />
           <Route exact path="/event/:uid" component={EventDetail} />
+          <Route exact path="/event/:uid/confirm" component={ConfirmRegister} />
           <Route component={NotFound} />
         </Switch>
       </UserContext.Provider>
