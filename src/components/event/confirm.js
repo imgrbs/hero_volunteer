@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Radio, Form, Modal } from 'antd'
 import Cookies from 'js-cookie'
 
-import firebase, { getOne, update } from '../../config/firebase';
+import firebase, { getOne, update, insert } from '../../config/firebase';
 import Container, { ContainerFluid, Col } from '../base/layout';
 import Input from '../base/input'
 import Icon, { IconInput, IconWithText } from '../base/icon'
@@ -49,13 +49,6 @@ class ConfirmRegister extends Component {
         const { user } = this.props
         const { uid } = this.props.match.params
         this.getEventByUid(uid)
-        // this.setState({
-        //     firstName: user.profile.firstName,
-        //     lastName: user.profile.lastName,
-        //     gender: user.profile.gender,
-        //     email: user.profile.email,
-        //     phone: user.profile.phone,
-        // })
     }
     
     getEventByUid = uid => {
@@ -121,7 +114,7 @@ class ConfirmRegister extends Component {
                         <Header>สมัครเข้าร่วมงาน</Header>
                     </Col>
                     <Col>
-                        <Form className='col-12 text-center' style={{ margin: 'auto' }} onSubmit={this.handleSubmit}>
+                        <Form className='col-12 text-center' style={{ margin: 'auto' }} onSubmit={e => e.preventDefault()}>
                             <Input
                                 className='my-2'
                                 placeholder="ชื่อ"
