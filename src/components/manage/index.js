@@ -32,8 +32,11 @@ export default class Manage extends Component {
 
     submit = (e) => {
         e.preventDefault()
-        console.log(this.state)
+        this.save()
+        window.location.href = '/'
     }
+
+    save = () => {}
 
     onChange = (e) => {
         this.setState({
