@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Radio, Form, Modal } from 'antd'
+// import Cookies from 'js-cookie'
 
 import firebase, { getOne, update } from '../../config/firebase';
 import Container, { ContainerFluid, Col } from '../base/layout';
@@ -69,36 +70,41 @@ class ConfirmRegister extends Component {
 
     handleJoin = () => {
         const { user } = this.props
-        const { uid } = this.props.match.params
-        const event =  this.getEventByUid(uid)
-        const { isApproved, coreTeam = [], coreTeamTypes, staffs = [], maxStaff} = event
-        const timestamp = firebase.database.ServerValue.TIMESTAMP
-        if (!isApproved) {
-            const newEvent = {
-                ...event,
-                coreTeam: [
-                ...coreTeam,
-                {
-                    userUid: user.uid,
-                    timestamp,
+        if (user) {
+            const { uid } = this.props.match.params
+            const event =  this.getEventByUid(uid)
+            const { isApproved, coreTeam = [], coreTeamTypes, staffs = [], maxStaff} = event
+            const timestamp = firebase.database.ServerValue.TIMESTAMP
+            if (!isApproved) {
+                const newEvent = {
+                    ...event,
+                    coreTeam: [
+                    ...coreTeam,
+                    {
+                        userUid: user.uid,
+                        timestamp,
+                    }
+                    ]
                 }
-                ]
+                this.updateEventByUid(uid, newEvent)
+            } else {
+                const newEvent = {
+                    ...event,
+                    staffs: [
+                    ...staffs,
+                    {
+                        userUid: user.uid,
+                        timestamp,
+                    }
+                    ]
+                }
+                this.updateEventByUid(uid, newEvent)
             }
-            this.updateEventByUid(uid, newEvent)
+            this.props.history.push(`/event/success`)
         } else {
-            const newEvent = {
-                ...event,
-                staffs: [
-                ...staffs,
-                {
-                    userUid: user.uid,
-                    timestamp,
-                }
-                ]
-            }
-            this.updateEventByUid(uid, newEvent)
+            Cookies.set('redirect', this.props.history.pathname)
+            this.props.history.push(`/login`)
         }
-        this.props.history.push(`/event/success`)
     }
 
     updateEventByUid = (uid, value) => {
@@ -123,6 +129,7 @@ class ConfirmRegister extends Component {
                                 prefix={<IconInput type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                 value={this.state.firstName}
                                 onChange={this.onChange}
+                                required
                             />
                             <Input
                                 className='my-2'
@@ -131,10 +138,11 @@ class ConfirmRegister extends Component {
                                 prefix={<IconInput type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                 value={this.state.lastName}
                                 onChange={this.onChange}
+                                required
                             />
                             <div className='text-left'>
                                 <span className='mx-3'>เพศ </span>
-                                <Radio.Group onChange={this.onChange} value={this.state.gender}>
+                                <Radio.Group name='gender' onChange={this.onChange} value={this.state.gender} required>
                                     <Radio value='M'>ชาย</Radio>
                                     <Radio value='F'>หญิง</Radio>
                                 </Radio.Group>
@@ -146,6 +154,7 @@ class ConfirmRegister extends Component {
                                 prefix={<IconInput type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                 value={this.state.email}
                                 onChange={this.onChange}
+                                required
                             />
                             <Input
                                 className='my-2'
@@ -154,6 +163,7 @@ class ConfirmRegister extends Component {
                                 prefix={<IconInput type="phone" style={{ color: 'rgba(0,0,0,.25)', transform: 'rotate(90deg)' }} />}
                                 value={this.state.phone}
                                 onChange={this.onChange}
+                                required
                             />
                         </Form>
                     </Col>
