@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import { Card } from "antd";
+import { Skeleton, Card } from "antd";
+import { isNull } from "util"
+import { Row } from 'reactstrap'
 
 import { getAll } from "../../config/firebase";
 
 import Container, { Col, ContainerFluid, VideoContainer } from "../base/layout";
-import { Row } from 'reactstrap'
-import Header from "../base/header";
+import Header from "../base/header"
+const { Meta } = Card;
 
 const FluidStyled = styled(ContainerFluid)`
     background-color: #f1f1f1 !important;
@@ -22,28 +24,37 @@ const Hero = () => (
 
 export default class LandingIndex extends Component {
   state = {
-    events: [{ title: 'Event name', date: '18 Jan 2019', place: 'The ocean' }, { title: 'Event name2', date: '18 Jan 2019', place: 'The ocean' }, { title: 'Event name3', date: '18 Jan 2019', place: 'The ocean' }]
+    events: [{ title: 'Event name', date: '18 Jan 2019', place: 'The ocean' }, { title: 'Event name2', date: '18 Jan 2019', place: 'The ocean' }],
+    eventsLoading: true
   }
   componentDidMount = () => {
-    // getAll('/recommend').once('value').then((snap) => {
-    //   const recommends = Object.keys(snap.val())
-    //   this.setState({ recommends, recommendLoading: false })
-    // })
+    getAll('/events').once('value').then((snap) => {
+      const data = snap.val()
+      if (!isNull(data)) {
+        const events = Object.values(snap.val())
+        console.log(events)
+        this.setState({ events, eventsLoading: false })
+      }
+    })
   }
   render() {
-    const { recommends, playlists, recommendLoading, playlistLoading } = this.state
+    const { events, eventsLoading } = this.state
 
     return (
       <React.Fragment>
         <Container>
+          <Col>
+            <Header>เหมาะกับคุณ</Header>
+          </Col>
           {
             this.state.events.map((event, i) => {
               return (
                 <Col xs={6} lg={4} className='py-3'>
                   <Card
+                    loading={eventsLoading}
                     hoverable
                     style={{ minWidth: 100, maxWidth: 300 }}
-                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                    cover={event.coverImage ? <img src={event.coverImage} /> : null}
                   >
                     <p>{event.title}</p>
                     <p>{event.date}</p>
