@@ -38,6 +38,7 @@ class App extends Component {
     firebase.auth().signOut().then(() => {
     });
     this.setState({ user: null });
+    window.location.href = '/'
   }
 
   render() {
