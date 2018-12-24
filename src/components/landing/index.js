@@ -1,26 +1,13 @@
-import React, { Component } from "react";
-import styled from 'styled-components';
-import { Skeleton, Card } from "antd";
+import React, { Component } from "react"
+import styled from 'styled-components'
+import { Card } from "antd"
 import { isNull } from "util"
-import { Row } from 'reactstrap'
 
-import { getAll } from "../../config/firebase";
+import { getAll } from "../../config/firebase"
 
-import Container, { Col, ContainerFluid, VideoContainer } from "../base/layout";
+import Container, { Col, ContainerFluid, VideoContainer } from "../base/layout"
 import Header from "../base/header"
-const { Meta } = Card;
-
-const FluidStyled = styled(ContainerFluid)`
-    background-color: #f1f1f1 !important;
-`
-
-const Hero = () => (
-  <section className="jumbotron pt-4 py-3 text-center">
-    <div className="container">
-      <h1 className="jumbotron-heading">Hero</h1>
-    </div>
-  </section>
-)
+import { SubHeader, Content } from "../base/text"
 
 export default class LandingIndex extends Component {
   state = {
@@ -56,9 +43,8 @@ export default class LandingIndex extends Component {
                     style={{ minWidth: 100, maxWidth: 300 }}
                     cover={event.coverImage ? <img src={event.coverImage} /> : null}
                   >
-                    <p>{event.title}</p>
-                    <p>{event.date}</p>
-                    <p>{event.place}</p>
+                    <SubHeader>{event.eventName}</SubHeader>
+                    <Content>{event.date}</Content>
                   </Card>
                 </Col>
               )
@@ -68,6 +54,6 @@ export default class LandingIndex extends Component {
 
         </Container>
       </React.Fragment>
-    );
+    )
   }
 }
