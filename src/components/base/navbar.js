@@ -85,7 +85,7 @@ export default class Navbar extends Component {
               </ul>
               <div className="ml-auto text-white">
                 {
-                    user ? (
+                    !user ? (
                       <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                           <Link onClick={this.toggle} className="nav-link active" to={'/login'}>
@@ -97,7 +97,7 @@ export default class Navbar extends Component {
                       <DropdownBox>
                         <div className="dropbtn">
                           <ProfileImage className='img-fluid rounded-circle' src={user.photoURL} alt="profile"/>
-                          <span className='mx-3'>
+                          <span className='mx-3 text-dark'>
                               { user.displayName }
                           </span>
                         </div>
