@@ -5,7 +5,7 @@ import { Col } from '../base/layout'
 import { Row } from 'reactstrap'
 import { ButtonPrimary } from '../base/button';
 
-const img1 = { name: 'พการตลาด', src: 'static/image/favorite/การตลาด.png' }
+const img1 = { name: 'การตลาด', src: 'static/image/favorite/การตลาด.png' }
 const img2 = {
     name: 'การแสดงละคร', src: 'static/image/favorite/การแสดงละคร.png'
 }
