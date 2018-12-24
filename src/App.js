@@ -15,6 +15,7 @@ import NotFound from "./components/error/NotFound";
 import Navbar from "./components/base/navbar";
 import Register from "./components/login/register";
 import SelectFavorite from "./components/login/selectFavorite";
+import SelectSkill from "./components/login/selectSkill";
 
 class App extends Component {
   state = {
@@ -44,6 +45,7 @@ class App extends Component {
           {user && <Route exact path="/login" component={Login} />}
           <Route path="/register" component={Register} />
           <Route path='/selectFav' component={SelectFavorite} />
+          <Route path='/selectSkill' component={SelectSkill} />
           <Route exact path="/" component={Landing} />
           <Route exact path="/event/success" component={JoinSuccess} />
           <Route exact path="/event/:uid" component={EventDetail} />

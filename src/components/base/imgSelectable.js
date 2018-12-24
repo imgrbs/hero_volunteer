@@ -11,12 +11,18 @@ export const Img = ({ selected, src, ...props }) => (
 )
 
 export const ImgSelectable = styled(Img)`
+    position: relative;
     width: 100%;
     color: rgba(0, 0, 0, 0);
 
     img {
+        opacity: 1;
+        display: block;
         width: 100%;
-        max-width: 280px;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+
     }
 
     :hover {

@@ -5,14 +5,14 @@ import { Col } from '../base/layout'
 import { Row } from 'reactstrap'
 import { ButtonPrimary } from '../base/button';
 
-const img1 = { name: 'พัฒนาโรงเรียน', src: 'static/image/favorite/พัฒนาโรงเรียน.png' }
+const img1 = { name: 'พการตลาด', src: 'static/image/favorite/การตลาด.png' }
 const img2 = {
-    name: 'กิจกรรมกับเด็กๆ', src: 'static/image/favorite/กิจกรรมกับเด็กๆ.png'
+    name: 'การแสดงละคร', src: 'static/image/favorite/การแสดงละคร.png'
 }
-const img3 = { name: 'บริการชุมชน', src: 'static/image/favorite/บริการชุมชน.png' }
-const img4 = { name: 'อนุรักษ์สิ่งแวดล้อม', src: 'static/image/favorite/อนุรักษ์สิ่งแวดล้อม.png' }
-const img5 = { name: 'ช่วยเหลือสัตว์', src: 'static/image/favorite/ช่วยเหลือสัตว์.png' }
-const img6 = { name: 'ค่ายอาสา', src: 'static/image/favorite/ค่ายอาสา.png' }
+const img3 = { name: 'เล่นดนตรี', src: 'static/image/favorite/เล่นดนตรี.png' }
+const img4 = { name: 'งานช่าง', src: 'static/image/favorite/งานช่าง.png' }
+const img5 = { name: 'สอนหนังสือ', src: 'static/image/favorite/สอนหนังสือ.png' }
+const img6 = { name: 'ทำอาหาร', src: 'static/image/favorite/ทำอาหาร.png' }
 
 const imgList = [img1, img2, img3, img4, img5, img6]
 
@@ -46,7 +46,7 @@ export default class SelectFavorite extends React.Component {
                 <Container>
                     <Row className='px-2' style={{ margintTop: '10px' }}>
                         <Col xs={12} lg={4}>
-                            <h5 className='px-3 my-2'>เลือกความชอบ</h5></Col>
+                            <h5 className='px-3 my-2'>เลือกทักษะ</h5></Col>
                     </Row>
                     <Row className='py-1 px-3'>
                         {
