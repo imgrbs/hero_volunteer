@@ -128,7 +128,8 @@ export default class LandingIndex extends Component {
           <Hero className='py-5' style={{ color: '#FFFFFF' }}>
             ต้องการ "สร้าง" งานจิตอาสาให้แก่ผู้อื่น
             </Hero>
-          <ButtonPrimaryOutlined className='py-6' style={{ fontSize: '28px', lineHeight: '50px', width: '300px' }}>สร้างงานจิตอาสา</ButtonPrimaryOutlined>
+          <a href='/manage'>
+            <ButtonPrimaryOutlined className='py-6' style={{ fontSize: '28px', lineHeight: '50px', width: '300px' }}>สร้างงานจิตอาสา</ButtonPrimaryOutlined></a>
         </div>
       </React.Fragment >
     )
