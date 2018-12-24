@@ -48,7 +48,7 @@ class App extends Component {
           {!user && <Route exact path="/login" component={Login} />}
           <Route path="/register" component={Register} />
           <Route path='/selectFav' component={SelectFavorite} />
-          <Route path='/selectSkill' component={SelectSkill} />
+          <Route path='/skill' component={SelectSkill} />
           <Route exact path="/" component={Landing} />
           <Route exact path="/event/success" component={JoinSuccess} />
           <Route exact path="/event/:uid" component={EventDetail} />
