@@ -48,7 +48,7 @@ class EventDetail extends Component {
         <ContainerFluid>
           <Container>
             <Col>
-              <img className='my-2 w-100' src="/static/image/staff.png" alt=""/>
+              <img className='my-2 w-100' src={event.coverImage} alt=""/>
             </Col>
             <Col>
               <Header>{event.eventName}</Header>
@@ -62,10 +62,11 @@ class EventDetail extends Component {
               <Content>{event.requirement}</Content>
 
               <SubHeader>ความต้องการทีมงานเฉพาะด้าน</SubHeader>
-              {/* <Content>{event.coreTeam}</Content> */}
+              {event && event.coreTeamTypes && event.coreTeamTypes.map((core => <Content>{core.name} : {core.max} คน</Content>))}
+              
 
-              <SubHeader>จำนวนผู้เข้าร่วม</SubHeader>
-              {/* <Content>{event.staffs}</Content> */}
+              <SubHeader>จำนวนผู้เข้าร่วมสูงจุด</SubHeader>
+              <Content>{event.maxStaff}</Content>
               <HorizontalLine />
               <Highlight>ผู้จัดงาน</Highlight>
               <Highlight>{event.organizer}</Highlight>
