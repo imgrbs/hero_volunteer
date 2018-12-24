@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 
+import { Collapse } from 'reactstrap';
+
 import { UserContext } from "../../context";
 
 const Nav = styled.nav`
@@ -39,9 +41,17 @@ const DropdownBox = styled.div`
 
 export default class Navbar extends Component {
   state = {
+    isOpen: false
   }
 
+  toggle = () =>  {
+    console.log('open')
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   render() {
+    const { isOpen } = this.state
     const { logout } = this.props
     return (
       <UserContext.Consumer>
@@ -50,7 +60,7 @@ export default class Navbar extends Component {
             <a className="navbar-brand" href="/">
               JoyJoin
             </a>
-            <button
+            <button onClick={this.toggle}
               className="navbar-toggler"
               type="button"
               data-toggle="collapse"
@@ -63,7 +73,7 @@ export default class Navbar extends Component {
             </button>
 
             <div
-              className="collapse navbar-collapse"
+              className={`${!isOpen && 'collapse'} navbar-collapse`}
               id="navbar"
             >
               <ul className="navbar-nav mr-auto">
