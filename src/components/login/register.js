@@ -4,6 +4,7 @@ import Container, { Col, ContainerFluid, VideoContainer } from "../base/layout";
 import { ButtonPrimary } from '../base/button';
 import Input from '../base/input'
 import { IconInput } from '../base/icon'
+import Header from '../base/text';
 
 export default class Register extends React.Component {
     state = {
@@ -28,9 +29,9 @@ export default class Register extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Container >
-                    <h3 className='px-5'>ข้อมูลส่วนตัว</h3>
-                    <Form className='px-5 text-center' style={{ margin: 'auto' }} onSubmit={this.handleSubmit}>
+                <Container>
+                    <Form className='my-5 px-5 text-center' style={{ margin: 'auto' }} onSubmit={this.handleSubmit}>
+                        <Header className='text-left'>ข้อมูลส่วนตัว</Header>
                         <Input
                             className='my-2'
                             placeholder="ชื่อ"
