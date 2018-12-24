@@ -1,6 +1,6 @@
 import React from 'react'
 import { Radio, Form } from 'antd'
-import Container, { Col, ContainerFluid, VideoContainer } from "../base/layout";
+import Container from "../base/layout";
 import { ButtonPrimary } from '../base/button';
 import Input from '../base/input'
 import { IconInput } from '../base/icon'
