@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { isNull } from "util"
+import Cookies from "js-cookie"
 
 import firebase, { insert, getOne } from '../../config/firebase'
 
@@ -28,6 +29,16 @@ export default class LoginIndex extends Component {
             providerId: info.providerId,
             ...profile
           })
+          if (user && user.profile) {
+            const redirect = Cookies.get('redirect')
+            if (redirect) {
+              window.location.href = `/${redirect}`
+            } else {
+              window.location.href = '/'
+            }
+          } else {
+            window.location.href = '/register'
+          }
         }
         this.setState({ user })
         window.location.href = '/'

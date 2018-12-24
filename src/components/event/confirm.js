@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Radio, Form, Modal } from 'antd'
-// import Cookies from 'js-cookie'
+import Cookies from 'js-cookie'
 
 import firebase, { getOne, update } from '../../config/firebase';
 import Container, { ContainerFluid, Col } from '../base/layout';

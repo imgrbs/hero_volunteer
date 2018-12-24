@@ -6,7 +6,10 @@ import Input from '../base/input'
 import { IconInput } from '../base/icon'
 import Header from '../base/text';
 
-export default class Register extends React.Component {
+import { update } from '../../config/firebase'
+import { UserContext } from '../../context'
+
+class Register extends React.Component {
     state = {
         firstName: '',
         lastName: '',
@@ -22,8 +25,15 @@ export default class Register extends React.Component {
     }
 
     handleSubmit = (e) => {
+        const { user } = this.props
+        const profile = {
+            ...user,
+            profile: {
+                ...this.state
+            }
+        }
+        update('/users', user.uid, profile)
         e.preventDefault()
-        // insert user info
     }
 
     render() {
@@ -39,6 +49,7 @@ export default class Register extends React.Component {
                             prefix={<IconInput type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                             value={this.state.firstName}
                             onChange={this.onChange}
+                            required
                         />
                         <Input
                             className='my-2'
@@ -47,10 +58,11 @@ export default class Register extends React.Component {
                             prefix={<IconInput type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                             value={this.state.lastName}
                             onChange={this.onChange}
+                            required
                         />
                         <div className='text-center'>
                             <span className='mx-3'>เพศ </span>
-                            <Radio.Group onChange={this.onChange} value={this.state.gender}>
+                            <Radio.Group name='gender' onChange={this.onChange} value={this.state.gender} required>
                                 <Radio value='M'>ชาย</Radio>
                                 <Radio value='F'>หญิง</Radio>
                             </Radio.Group>
@@ -62,6 +74,7 @@ export default class Register extends React.Component {
                             prefix={<IconInput type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
                             value={this.state.email}
                             onChange={this.onChange}
+                            required
                         />
                         <Input
                             className='my-2'
@@ -70,8 +83,9 @@ export default class Register extends React.Component {
                             prefix={<IconInput type="phone" style={{ color: 'rgba(0,0,0,.25)', transform: 'rotate(90deg)' }} />}
                             value={this.state.phone}
                             onChange={this.onChange}
+                            required
                         />
-                        <ButtonPrimary className='w-100 my-2 py-2'>บันทึก</ButtonPrimary>
+                        <ButtonPrimary htmlType className='w-100 my-2 py-2 text-white'>บันทึก</ButtonPrimary>
                     </Form>
 
                 </Container>
@@ -79,3 +93,15 @@ export default class Register extends React.Component {
         )
     }
 }
+
+const ComposeUserContext = ({...props}) => (
+    <UserContext.Consumer>
+       {
+            ({ user }) => (
+                <Register user={user} {...props}/>
+            )
+       }
+    </UserContext.Consumer>
+)
+
+export default ComposeUserContext
