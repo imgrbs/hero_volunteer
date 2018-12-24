@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Header from '../base/header';
+import Header from '../base/text';
 
 export default class JoinSuccess extends Component {
   render() {

@@ -5,7 +5,7 @@ import { isNull } from "util"
 import { getAll } from "../../config/firebase"
 
 import Container, { Col } from "../base/layout"
-import Header from "../base/header"
+import Header from "../base/text"
 import { SubHeader, Content } from "../base/text"
 
 export default class LandingIndex extends Component {
