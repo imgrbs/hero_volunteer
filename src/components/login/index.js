@@ -38,9 +38,9 @@ export default class LoginIndex extends Component {
         insert(`/users/${uid}`, userWithProfile)
         this.setState({ user: userWithProfile })
         if (user && user.profile && user.profile.firstName !== '') {
-          window.location.href = '/'
+          this.props.history.push('/register')
         } else {
-          window.location.href = '/register'
+          this.props.history.push('/register')
         }
       })
     })
