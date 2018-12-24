@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { Row } from 'reactstrap';
-import { Card } from 'antd';
 
 import firebase, { insert, getOne } from '../../config/firebase'
 
-import Container, { Col } from "../base/layout";
-import { ButtonPrimary } from "../base/button";
 import { UserContext } from "../../context";
+
+import Container, { Col } from "../base/layout";
+import { FacebookButton } from "../base/button";
+import Header from "../base/text";
+import Icon from "../base/icon";
 
 export default class LoginIndex extends Component {
   state = {
@@ -14,7 +15,7 @@ export default class LoginIndex extends Component {
   }
 
   loginWithGoogle = (e) => {
-    const provider = new firebase.auth.GoogleAuthProvider()
+    const provider = new firebase.auth.FacebookAuthProvider()
     firebase.auth().signInWithPopup(provider).then(userAuth => {
       const uid = userAuth.user.uid
       const info = userAuth.additionalUserInfo
@@ -37,22 +38,17 @@ export default class LoginIndex extends Component {
     return (
       <UserContext.Provider user={this.state.user}>
           <Container>
-            <Card className='col-12 py-5'>
-              <Row>
-                <Col className='text-center'>
-                    <h3>
-                      Please login
-                    </h3>
-                  </Col>
-
-                <Col className='text-center'>
-                  <ButtonPrimary className='px-3' onClick={e => this.loginWithGoogle(e)}>
-                    <img src="/img/google.png" alt=""/>
-                    Login with Facebook
-                  </ButtonPrimary>
-                </Col>
-              </Row>
-            </Card>
+            <Col className='text-center'>
+                <Header>
+                  เข้าสู่ระบบ
+                </Header>
+              </Col>
+            <Col className='text-center'>
+              <FacebookButton className='px-5 py-2' onClick={e => this.loginWithGoogle(e)}>
+                <Icon type="facebook" />
+                Login with Facebook
+              </FacebookButton>
+            </Col>
           </Container>
       </UserContext.Provider>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import Header, { SubHeader, Highlight, Content } from '../base/text'
 import Container, { ContainerFluid, Col } from '../base/layout'
 import  { FixedButton } from '../base/button'
 
@@ -14,24 +15,24 @@ export default class EventDetail extends Component {
               <img className='my-2' src="/static/image/staff.png" alt=""/>
             </Col>
             <Col>
-              <h3>{event.eventName}</h3>
-              <h6>วันที่: <b>{event.date} | เวลา: {event.startTime} - {event.endTime} น.</b></h6>
-              <h6>สถานที่ {event.location}</h6>
+              <Header>{event.eventName}</Header>
+              <Highlight>วันที่: <b>{event.date} | เวลา: {event.startTime} - {event.endTime} น.</b></Highlight>
+              <Highlight>สถานที่ {event.location}</Highlight>
 
-              <h6 className='mt-3'>รายละเอียดงาน</h6>
-              <p>{event.description}</p>
+              <SubHeader className='mt-3'>รายละเอียดงาน</SubHeader>
+              <Content>{event.description}</Content>
 
-              <h6>สิ่งที่คาดว่าะได้รับ</h6>
-              <p>{event.requirement}</p>
+              <SubHeader>สิ่งที่คาดว่าะได้รับ</SubHeader>
+              <Content>{event.requirement}</Content>
 
-              <h6>ความต้องการทีมงานเฉพาะด้าน</h6>
-              <h1>{event.coreTeam}</h1>
+              <SubHeader>ความต้องการทีมงานเฉพาะด้าน</SubHeader>
+              <Content>{event.coreTeam}</Content>
 
-              <h1>จำนวนผู้เข้าร่วม</h1>
-              <h1>{event.staffs}</h1>
+              <SubHeader>จำนวนผู้เข้าร่วม</SubHeader>
+              <Content>{event.staffs}</Content>
 
-              <h4>ผู้จัดงาน</h4>
-              <h5>{event.organizer}</h5>
+              <Highlight>ผู้จัดงาน</Highlight>
+              <Highlight>{event.organizer}</Highlight>
             </Col>
           </Container>
         </ContainerFluid>
