@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Radio, Form } from 'antd'
+import { Radio, Form, Modal } from 'antd'
 
 import firebase, { getOne, update } from '../../config/firebase';
 import Container, { ContainerFluid, Col } from '../base/layout';
@@ -12,8 +12,11 @@ import { UserContext } from '../../context';
 import Loading from '../base/loading';
 import { ButtonPrimary } from '../base/button';
 
+const confirm = Modal.confirm;
+
 class ConfirmRegister extends Component {
     state = {
+        visible: false,
         loading: true,
         event: {},
         firstName: '',
@@ -21,6 +24,18 @@ class ConfirmRegister extends Component {
         gender: '',
         email: '',
         phone: ''
+    }
+
+    showConfirm = () => {
+        const handleJoin = this.handleJoin
+        confirm({
+            title: 'ยืนยันการสมัครค่ายอีกครั้ง?',
+            content: 'กรุณาตรวจเช็คข้อมูลของท่านก่อนกดยืนยัน',
+            onOk() {
+                handleJoin()
+            },
+            onCancel() {},
+        });
     }
 
     onChange = (e) => {
@@ -158,7 +173,7 @@ class ConfirmRegister extends Component {
                         <Highlight>{event.telNo}</Highlight>
                     </Col>
                     <Col className='mb-3'>
-                        <ButtonPrimary onClick={this.handleJoin} className='w-100 py-2 text-white'>ยืนยันการสมัคร</ButtonPrimary>
+                        <ButtonPrimary onClick={this.showConfirm} className='w-100 py-2 text-white'>ยืนยันการสมัคร</ButtonPrimary>
                     </Col>
                 </Container>
             </ContainerFluid>
