@@ -4,6 +4,7 @@ import { ImgSelectable } from '../base/imgSelectable'
 import { Col } from '../base/layout'
 import { Row } from 'reactstrap'
 import { ButtonPrimary } from '../base/button';
+import { Content } from '../base/text';
 
 const img1 = { name: 'พัฒนาโรงเรียน', src: 'static/image/favorite/พัฒนาโรงเรียน.png' }
 const img2 = {
@@ -45,11 +46,12 @@ export default class SelectFavorite extends React.Component {
         return (
             <React.Fragment>
                 <Container>
-                    <Row className='px-2' style={{ margintTop: '10px' }}>
-                        <Col xs={12} lg={12}>
-                            <h5 className='px-3 my-2'>เลือกความชอบ</h5></Col>
-                    </Row>
-                    <Row className='py-1 px-3'>
+                    <Row className='px-2' >
+                        <Col xs={12} lg={12} >
+                            <h5 className='px-3 my-2'>เลือกความชอบ</h5>
+                            <Content className='px-3' style={{ color: 'red' }}>*เลือกอย่างน้อย 3 หัวข้อ</Content>
+                        </Col>
+
                         {
                             imgList.map(img =>
                                 (<Col xs={6} lg={4} className='my-2'><ImgSelectable selected={this.state.selectedImg.includes(img.name)} src={img.src} onClick={() => this.handleClick(img.name)} /></Col>)
