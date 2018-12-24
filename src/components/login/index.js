@@ -48,7 +48,7 @@ export default class LoginIndex extends Component {
                 <Col className='text-center'>
                   <ButtonPrimary className='px-3' onClick={e => this.loginWithGoogle(e)}>
                     <img src="/img/google.png" alt=""/>
-                    Login with Google
+                    Login with Facebook
                   </ButtonPrimary>
                 </Col>
               </Row>
