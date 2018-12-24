@@ -48,9 +48,9 @@ class App extends Component {
         <Navbar logout={this.logout} />
         <Switch>
           {!user && <Route exact path="/login" component={Login} />}
-          <Route path="/register" component={Register} />
-          <Route path='/favorite' component={SelectFavorite} />
-          <Route path='/skill' component={SelectSkill} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path='/favorite' component={SelectFavorite} />
+          <Route exact path='/skill' component={SelectSkill} />
           <Route exact path="/" component={Landing} />
           <Route exact path="/manage" component={ManageEvent} />
           <Route exact path="/event/success" component={JoinSuccess} />
