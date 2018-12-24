@@ -11,6 +11,7 @@ import Login from "./components/login";
 import NotFound from "./components/error/NotFound";
 
 import Navbar from "./components/base/navbar";
+import Register from "./components/login/register";
 
 class App extends Component {
   state = {
@@ -37,7 +38,8 @@ class App extends Component {
       <UserContext.Provider value={{ user }}>
         <Navbar logout={this.logout} />
         <Switch>
-          { user && <Route exact path="/login" component={Login} /> }
+          {user && <Route exact path="/login" component={Login} />}
+          <Route path="/register" component={Register} />
           <Route exact path="/" component={Landing} />
           <Route exact path="/event/:uid" component={EventDetail} />
           <Route component={NotFound} />

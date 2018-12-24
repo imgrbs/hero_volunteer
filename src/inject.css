@@ -1,15 +1,18 @@
 /* @import '~antd/dist/antd.css'; */
 /* @import '~bootstrap/dist/css/bootstrap.min.css'; */
 
-body {
-  margin: 0;
-  padding: 0;
-  padding-top: 100px;
+*, .ant-form, .ant-input, .ant-radio {
   font-family: 'Kanit', "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
 }
 
 code {
