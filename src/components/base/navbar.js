@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 
+import firebase from '../../config/firebase';
 import colors from '../../config/colors';
 
 import { UserContext } from "../../context";
@@ -100,6 +101,9 @@ export default class Navbar extends Component {
                           <span className='mx-3 text-dark'>
                               { user.displayName }
                           </span>
+                        </div>
+                        <div className="dropdown-content">
+                          <a href='/profile'>Profile</a>
                         </div>
                         <div className="dropdown-content">
                           <a href='#'onClick={logout}>Logout</a>
