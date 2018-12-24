@@ -33,7 +33,7 @@ export default class Manage extends Component {
     submit = (e) => {
         e.preventDefault()
         this.save()
-        window.location.href = '/'
+        this.props.history.push('/')
     }
 
     save = () => {}

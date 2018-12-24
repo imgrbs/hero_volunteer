@@ -38,7 +38,7 @@ export default class SelectFavorite extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        window.location.href = '/skill'
+        this.props.history.push('/skill')
     }
 
     render() {
