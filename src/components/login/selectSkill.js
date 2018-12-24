@@ -60,8 +60,8 @@ export default class SelectFavorite extends React.Component {
                         }
                     </Row>
                     <Row className='py-1 mx-2 w-100'>
-                        <Col xs={12} className='text-right'>
-                            <ButtonPrimary className='btn mr-auto' onClick={this.handleSubmit} {...props}>Next</ButtonPrimary></Col>
+                        <Col xs={12} className='text-center'>
+                            <ButtonPrimary className='btn mr-auto px-10 py-2' onClick={this.handleSubmit} {...props}>Next</ButtonPrimary></Col>
                     </Row>
                 </Container>
             </React.Fragment>
