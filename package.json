@@ -1,7 +1,7 @@
 {
-  "name": "ragnarok_mobile_playlist",
+  "name": "hero_volunteer",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "antd": "^3.10.4",
     "axios": "^0.18.0",
