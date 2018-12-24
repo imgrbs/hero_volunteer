@@ -1,7 +1,7 @@
 /* @import '~antd/dist/antd.css'; */
 /* @import '~bootstrap/dist/css/bootstrap.min.css'; */
 
-*, .ant-form, .ant-input, .ant-radio {
+*, .ant-form, .ant-input, .ant-radio, .ant-tag {
   font-family: 'Kanit', "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
