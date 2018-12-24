@@ -9,12 +9,19 @@ import { FacebookButton } from "../base/button";
 import Header from "../base/text";
 import Icon from "../base/icon";
 
+function isNull(data) {
+  if (data) {
+    return false;
+  }
+  return true;
+}
+
 export default class LoginIndex extends Component {
   state = {
 
   }
 
-  loginWithGoogle = (e) => {
+  login = (e) => {
     const provider = new firebase.auth.FacebookAuthProvider()
     firebase.auth().signInWithPopup(provider).then(userAuth => {
       const uid = userAuth.user.uid
@@ -22,7 +29,7 @@ export default class LoginIndex extends Component {
       const profile = info.profile;
       getOne(`/user`, uid).once("value").then(snap => {
         const user = snap.val()
-        if (user) {
+        if (isNull(user)) {
           insert(`/user/${uid}`, {
             providerId: info.providerId,
             ...profile
@@ -44,7 +51,7 @@ export default class LoginIndex extends Component {
                 </Header>
               </Col>
             <Col className='text-center'>
-              <FacebookButton className='px-5 py-2' onClick={e => this.loginWithGoogle(e)}>
+              <FacebookButton className='px-5 py-2' onClick={e => this.login(e)}>
                 <Icon type="facebook" />
                 Login with Facebook
               </FacebookButton>
