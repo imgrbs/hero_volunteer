@@ -13,6 +13,7 @@ import NotFound from "./components/error/NotFound";
 
 import Navbar from "./components/base/navbar";
 import Register from "./components/login/register";
+import SelectFavorite from "./components/login/selectFavorite";
 
 class App extends Component {
   state = {
@@ -41,6 +42,7 @@ class App extends Component {
         <Switch>
           {user && <Route exact path="/login" component={Login} />}
           <Route path="/register" component={Register} />
+          <Route path='/selectFav' component={SelectFavorite} />
           <Route exact path="/" component={Landing} />
           <Route exact path="/event/success" component={JoinSuccess} />
           <Route exact path="/event/:uid" component={EventDetail} />
